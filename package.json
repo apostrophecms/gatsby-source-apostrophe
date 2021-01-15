@@ -16,8 +16,10 @@
   "license": "MIT",
   "dependencies": {
     "camelcase": "^6.2.0",
-    "eslint": "^7.16.0",
-    "eslint-config-apostrophe": "^3.4.0",
     "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-apostrophe": "^3.4.0"
   }
 }
