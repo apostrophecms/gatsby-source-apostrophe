@@ -58,7 +58,7 @@ exports.sourceNodes = async ({
     // loop through data and create Gatsby nodes
     pieces.forEach(piece => {
       piece.aposId = piece._id;
-      delete piece._id;
+      piece._id = undefined;
       return createNode({
         ...piece,
         id: createNodeId(`${nodeType}-${piece.aposId}`),
