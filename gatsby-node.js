@@ -59,7 +59,7 @@ exports.sourceNodes = async ({
     pieces.forEach(piece => {
       piece.aposId = piece._id;
       piece._id = undefined;
-      return createNode({
+      createNode({
         ...piece,
         id: createNodeId(`${nodeType}-${piece.aposId}`),
         parent: null,
