@@ -51,6 +51,6 @@ exports.sourceNodes = async ({
     baseUrl: options.baseUrl,
     apiRouteBase,
     apiKey: options.apiKey,
-    renderPage: options.renderPage
+    renderPages: options.renderPages
   }, gatsbyUtils);
 };
