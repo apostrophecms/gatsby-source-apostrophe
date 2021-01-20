@@ -48,7 +48,9 @@ exports.sourceNodes = async ({
   });
 
   await generatePageNodes(pageIds, {
+    baseUrl: options.baseUrl,
     apiRouteBase,
-    apiKey: options.apiKey
+    apiKey: options.apiKey,
+    renderPage: options.renderPage
   }, gatsbyUtils);
 };
