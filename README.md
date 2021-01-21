@@ -44,7 +44,7 @@ The base URL for API requests. Usually this will be the root domain of the Apost
 
 ### pieceTypes
 
-An array of Apostrophe piece type names. These will the same as the key name entered in the `app.js` `modules` object in the Apostrophe app. You may include core piece types that are not included by default, e.g, `apostrophe/file`, `apostrophe/image-tag`.
+An array of Apostrophe piece type names. These will the same as the key name entered in the `app.js` `modules` object in the Apostrophe app. You may include core piece types that are not included by default, e.g, `@apostrophecms/file`, `@apostrophecms/image-tag`.
 
 ### renderPages
 
