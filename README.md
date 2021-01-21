@@ -56,7 +56,7 @@ Defaults to `true`. Set this to `false` to avoid an additional request for each 
 
 Apostrophe content node types in Gatsby's GraphQL API are all prefixed with `Apos`. So if you include your `article` piece type, it will appear in the GraphQL API as `AposArticle` nodes and the query collections will be `aposArticle` and `allAposArticle`.
 
-Apostrophe core piece types and pages are prefixed `AposCore`. For example, including the core `@apostrophecms/file` piece type will create `AposCoreFile` nodes.
+Apostrophe core piece types and pages are prefixed `AposCore`. For example, including the core `@apostrophecms/file` piece type will create `AposCoreFile` nodes. Other scoped module names will be converted to pascal-case, removing punctuation, and prefixed with `Apos`. For example, `@skynet/bad-robots` and `@skynet/badRobots` will be converted to `AposSkynetBadRobots`.
 
 ### Rendered content
 
