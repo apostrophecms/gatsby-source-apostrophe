@@ -60,13 +60,14 @@ Apostrophe core piece types and pages are prefixed `AposCore`. For example, incl
 
 ### Rendered content
 
-Apostrophe pieces are well suited to being delivered as structured, JSON-like data. Apostrophe pages, on the other hand, usually consist primarily of the flexible content "areas," populated with any number of different widget types. It powers Apostrophe's great in-context editing experience, but the raw data is not easy to use in a page template on your own.
+Apostrophe "pieces" are well suited to being delivered as structured, JSON-like data. However, the power of Apostrophe really shines when editors build custom series of content widgets in "areas." Because areas can contain many types of widgets, and thus are not consisten in data structure, it is more useful to retrieve those from the APIs as rendered HTML.
 
-Unless you add `renderPages: false` to this source plugin's options, pages will appear with a `_rendered` property in Gatsby GraphQL queries. This property's value is a string of HTML, rendered using the relevant page template in the Apostrophe app. That HTML can be used in your Gatsby site to [programmatically create pages](https://www.gatsbyjs.com/docs/tutorial/part-seven/) using the right layout component and slug structure for your site.
+Area fields on piece types will be available in the GraphQL queries with a `_rendered` property containing a string of rendered HTML. All other field types are delivered directly as their normal data types, e.g., strings, number, arrays, etc.
+
+Apostrophe pages usually consist primarily of these content "areas," populated with any number of different widget types. Unless you add `renderPages: false` to this source plugin's options, pages will appear with a `_rendered` property in Gatsby GraphQL queries. This property's value is a string of HTML, rendered using the relevant page template in the Apostrophe app. That HTML can be used in your Gatsby site to [programmatically create pages](https://www.gatsbyjs.com/docs/tutorial/part-seven/) using the right layout component and slug structure for your site.
 
 ## Planned features
 
-- Apos "areas" are rendered as HTML by default, rather than output as less usable raw data
 - Apostrophe images included by default
 - Apostrophe pages included via an option, generating Gatsby pages
 - Apos pages rendered as HTML by default (necessary for automatically generating Gatsby pages)
