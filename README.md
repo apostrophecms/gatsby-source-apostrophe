@@ -66,7 +66,9 @@ Area fields on piece types will be available in the GraphQL queries with a `_ren
 
 #### Rendered pages
 
-Apostrophe pages usually consist primarily of these content "areas," populated with any number of different widget types. Unless you add `renderPages: false` to this source plugin's options, pages will appear with a `_rendered` property in Gatsby GraphQL queries. This property's value is a string of HTML, rendered using the relevant page template in the Apostrophe app. That HTML can be used in your Gatsby site to [programmatically create pages](https://www.gatsbyjs.com/docs/tutorial/part-seven/) using the right layout component and slug structure for your site.
+Apostrophe pages usually consist primarily of these content "areas," populated with any number of different widget types. Unless you add `renderPages: false` to this source plugin's options, pages will appear with a `_rendered` property in Gatsby GraphQL queries. This property's value is a string of HTML, rendered using the relevant page template in the Apostrophe app. See [the page API documentation](https://a3.docs.apos.dev/reference/api/pages.html#get-url-apos-refresh-1) for more specifics on what is rendered.
+
+That HTML can be used in your Gatsby site to [programmatically create pages](https://www.gatsbyjs.com/docs/tutorial/part-seven/) using the right layout component and slug structure for your site.
 
 If there are parts of the Apostrophe page templates that you do *not* want to include in the rendered response, you can wrap those in the following Nunjucks conditional (these requests include a `?headless=true` parameter):
 
