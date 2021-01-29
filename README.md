@@ -60,7 +60,7 @@ Apostrophe core piece types and pages are prefixed `AposCore`. For example, incl
 
 ### Rendered content
 
-Apostrophe "pieces" are well suited to being delivered as structured, JSON-like data. However, the power of Apostrophe really shines when editors build custom series of content widgets in "areas." Because areas can contain many types of widgets, and thus are not consisten in data structure, it is more useful to retrieve those from the APIs as rendered HTML.
+Apostrophe "pieces" are well suited to being delivered as structured, JSON-like data. However, the power of Apostrophe really shines when editors build custom series of content widgets in "areas." Because areas can contain many types of widgets, and thus are not consistent in data structure, it is usually more useful to retrieve those from the APIs as rendered HTML.
 
 Area fields on piece types will be available in the GraphQL queries with a `_rendered` property containing a string of rendered HTML. All other field types are delivered directly as their normal data types, e.g., strings, number, arrays, etc.
 
@@ -74,7 +74,7 @@ If there are parts of the Apostrophe page templates that you do *not* want to in
 
 ```django
 <!-- For example, in the Apostrophe site's `views/layout.html` -->
-{% if data.query.headless != 'true' %}
+{% if not data.query.headless == 'true' %}
   <!-- Template wrapper you don't want in rendered responses. -->
 {% endif %}
 ```
