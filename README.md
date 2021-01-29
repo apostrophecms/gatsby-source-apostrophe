@@ -9,9 +9,9 @@ Source plugin for accessing [ApostropheCMS 3.x content APIs](https://a3.docs.apo
 ## How to use
 
 1. Review [Gatsby documentation on using source plugins](https://www.gatsbyjs.com/docs/tutorial/part-five/). 🤓
-1. [Add an API key to the Apostrophe app](https://a3.docs.apos.dev/reference/api/authentication.html#api-keys) to include as the `apiKey` option.
-2. Enter the Apos app root domain as the `baseUrl` option. For local development this will likely be `http://localhost:3000`.
-3. Add an array of the piece types (custom content types) you want available to Gatsby in the `pieceTypes` array.
+2. [Add an API key to the Apostrophe app](https://a3.docs.apos.dev/reference/api/authentication.html#api-keys) to include as the `apiKey` option.
+3. Enter the Apos app root domain as the `baseUrl` option. For local development this will likely be `http://localhost:3000`.
+4. Add an array of the piece types (custom content types) you want available to Gatsby in the `pieceTypes` array.
 
 ```javascript
 // In your gatsby-config.js
@@ -60,16 +60,29 @@ Apostrophe core piece types and pages are prefixed `AposCore`. For example, incl
 
 ### Rendered content
 
-Apostrophe pieces are well suited to being delivered as structured, JSON-like data. Apostrophe pages, on the other hand, usually consist primarily of the flexible content "areas," populated with any number of different widget types. It powers Apostrophe's great in-context editing experience, but the raw data is not easy to use in a page template on your own.
+Apostrophe "pieces" are well suited to being delivered as structured, JSON-like data. However, the power of Apostrophe really shines when editors build custom series of content widgets in "areas." Because areas can contain many types of widgets, and thus are not consistent in data structure, it is usually more useful to retrieve those from the APIs as rendered HTML.
 
-Unless you add `renderPages: false` to this source plugin's options, pages will appear with a `_rendered` property in Gatsby GraphQL queries. This property's value is a string of HTML, rendered using the relevant page template in the Apostrophe app. That HTML can be used in your Gatsby site to [programmatically create pages](https://www.gatsbyjs.com/docs/tutorial/part-seven/) using the right layout component and slug structure for your site.
+Area fields on piece types will be available in the GraphQL queries with a `_rendered` property containing a string of rendered HTML. All other field types are delivered directly as their normal data types, e.g., strings, number, arrays, etc.
+
+#### Rendered pages
+
+Apostrophe pages usually consist primarily of these content "areas," populated with any number of different widget types. Unless you add `renderPages: false` to this source plugin's options, pages will appear with a `_rendered` property in Gatsby GraphQL queries. This property's value is a string of HTML, rendered using the relevant page template in the Apostrophe app. See [the page API documentation](https://a3.docs.apos.dev/reference/api/pages.html#get-url-apos-refresh-1) for more specifics on what is rendered.
+
+That HTML can be used in your Gatsby site to [programmatically create pages](https://www.gatsbyjs.com/docs/tutorial/part-seven/) using the right layout component and slug structure for your site.
+
+If there are parts of the Apostrophe page templates that you do *not* want to include in the rendered response, you can wrap those in the following Nunjucks conditional (these requests include a `?headless=true` parameter):
+
+```django
+<!-- For example, in the Apostrophe site's `views/layout.html` -->
+{% if not data.query.headless == 'true' %}
+  <!-- Template wrapper you don't want in rendered responses. -->
+{% endif %}
+```
 
 ## Planned features
 
-- Apos "areas" are rendered as HTML by default, rather than output as less usable raw data
-- Apostrophe images included by default
-- Apostrophe pages included via an option, generating Gatsby pages
-- Apos pages rendered as HTML by default (necessary for automatically generating Gatsby pages)
+- A video player JS to support the Apostrophe core video widget in areas
+- Option for Apostrophe pages to automatically generate Gatsby pages
 - An option to make all piece types available in Gatsby GraphQL queries without naming them
 
 ## License
