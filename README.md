@@ -84,6 +84,7 @@ If there are parts of the Apostrophe page templates that you do *not* want to in
 - A video player JS to support the Apostrophe core video widget in areas
 - Option for Apostrophe pages to automatically generate Gatsby pages
 - An option to make all piece types available in Gatsby GraphQL queries without naming them
+- Explore pairing Apostrophe hosting with Gatsby image tranformation, using Apostrophe image original file version.
 
 ## License
  gatsby-source-apostrophe is released under the [MIT License](https://github.com/punkave/apostrophe/blob/master/LICENSE.md).
