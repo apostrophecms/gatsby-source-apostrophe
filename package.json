@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-apostrophe",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "description": "An ApostropheCMS source plugin for Gatsby",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,13 @@
     "gatsby-plugin",
     "apostrophecms"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apostrophecms/gatsby-source-apostrophe"
+  },
+  "bugs": {
+    "url" : "https://github.com/apostrophecms/gatsby-source-apostrophe/issues"
+  },
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
