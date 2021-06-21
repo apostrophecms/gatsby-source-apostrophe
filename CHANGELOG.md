@@ -2,7 +2,9 @@
 
 ## UNRELEASED
 
-- Fixes a variable name typo (`superflous`)
+- Fixes a variable name typo (`superflous`).
+- Replaces default Gatsby license.
+- Fixes links in the README.
 
 ## 1.0.0-beta
 
