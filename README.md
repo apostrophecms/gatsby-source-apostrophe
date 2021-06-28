@@ -1,6 +1,6 @@
 # gatsby-source-apostrophe
 
-Source plugin for accessing [ApostropheCMS 3.x content APIs](https://a3.docs.apos.dev/guide/rest-apis.html) in [Gatsby](https://www.gatsbyjs.com/docs/tutorial/)
+Source plugin for accessing [ApostropheCMS 3.x content APIs](https://v3.docs.apostrophecms.org/reference/api/) in [Gatsby](https://www.gatsbyjs.com/docs/tutorial/)
 
 ## Install
 
@@ -9,7 +9,7 @@ Source plugin for accessing [ApostropheCMS 3.x content APIs](https://a3.docs.apo
 ## How to use
 
 1. Review [Gatsby documentation on using source plugins](https://www.gatsbyjs.com/docs/tutorial/part-five/). 🤓
-2. [Add an API key to the Apostrophe app](https://a3.docs.apos.dev/reference/api/authentication.html#api-keys) to include as the `apiKey` option.
+2. [Add an API key to the Apostrophe app](https://v3.docs.apostrophecms.org/reference/api/authentication.html#api-keys) to include as the `apiKey` option.
 3. Enter the Apos app root domain as the `baseUrl` option. For local development this will likely be `http://localhost:3000`.
 4. Add an array of the piece types (custom content types) you want available to Gatsby in the `pieceTypes` array.
 
@@ -36,7 +36,7 @@ module.exports = {
 
 ### apiKey (required)
 
-An ApostropheCMS API key with permissions to make GET requests. [Read more about setting up API keys](https://a3.docs.apos.dev/reference/api/authentication.html#api-keys) in the Apostrophe documentation.
+An ApostropheCMS API key with permissions to make GET requests. [Read more about setting up API keys](https://v3.docs.apostrophecms.org/reference/api/authentication.html#api-keys) in the Apostrophe documentation.
 
 ### baseUrl (required)
 
@@ -66,7 +66,7 @@ Area fields on piece types will be available in the GraphQL queries with a `_ren
 
 #### Rendered pages
 
-Apostrophe pages usually consist primarily of these content "areas," populated with any number of different widget types. Unless you add `renderPages: false` to this source plugin's options, pages will appear with a `_rendered` property in Gatsby GraphQL queries. This property's value is a string of HTML, rendered using the relevant page template in the Apostrophe app. See [the page API documentation](https://a3.docs.apos.dev/reference/api/pages.html#get-url-apos-refresh-1) for more specifics on what is rendered.
+Apostrophe pages usually consist primarily of these content "areas," populated with any number of different widget types. Unless you add `renderPages: false` to this source plugin's options, pages will appear with a `_rendered` property in Gatsby GraphQL queries. This property's value is a string of HTML, rendered using the relevant page template in the Apostrophe app. See [the page API documentation](https://v3.docs.apostrophecms.org/reference/api/pages.html#delete-api-v1-apostrophecms-page-id) for more specifics on what is rendered.
 
 That HTML can be used in your Gatsby site to [programmatically create pages](https://www.gatsbyjs.com/docs/tutorial/part-seven/) using the right layout component and slug structure for your site.
 
@@ -86,4 +86,4 @@ If there are parts of the Apostrophe page templates that you do *not* want to in
 - An option to make all piece types available in Gatsby GraphQL queries without naming them
 
 ## License
- gatsby-source-apostrophe is released under the [MIT License](https://github.com/punkave/apostrophe/blob/master/LICENSE.md).
+ gatsby-source-apostrophe is released under the [MIT License](https://github.com/apostrophecms/gatsby-source-apostrophe/blob/main/LICENSE).
