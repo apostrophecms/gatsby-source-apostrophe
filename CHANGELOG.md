@@ -1,6 +1,6 @@
 # Changelog
 
-## UNRELEASED
+## 1.0.0
 
 - Fixes a variable name typo (`superflous`).
 - Replaces default Gatsby license.
