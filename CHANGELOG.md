@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+Corrects the `apos-refresh` query parameter for page markup to `aposRefresh`.
+
 ## 1.0.0
 
 - Fixes a variable name typo (`superflous`).
