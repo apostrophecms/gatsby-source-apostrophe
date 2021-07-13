@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-Corrects the `apos-refresh` query parameter for page markup to `aposRefresh`.
+- Corrects the `apos-refresh` query parameter for page markup to `aposRefresh`.
+- Adds notes about the plugin being a proof of concept and not currently production ready. Shame on us for ending beta early.
 
 ## 1.0.0
 

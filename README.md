@@ -2,6 +2,8 @@
 
 Source plugin for accessing [ApostropheCMS 3.x content APIs](https://v3.docs.apostrophecms.org/reference/api/) in [Gatsby](https://www.gatsbyjs.com/docs/tutorial/)
 
+**NOTE:** This source plugin is current meant as a proof of concept using Apostrophe 3 REST APIs. It should not be used in production as long as this note is present.
+
 ## Install
 
 `npm install gatsby-source-apostrophe`
@@ -12,6 +14,9 @@ Source plugin for accessing [ApostropheCMS 3.x content APIs](https://v3.docs.apo
 2. [Add an API key to the Apostrophe app](https://v3.docs.apostrophecms.org/reference/api/authentication.html#api-keys) to include as the `apiKey` option.
 3. Enter the Apos app root domain as the `baseUrl` option. For local development this will likely be `http://localhost:3000`.
 4. Add an array of the piece types (custom content types) you want available to Gatsby in the `pieceTypes` array.
+  - Note: Make sure at least one document exists for each piece type included here before querying it in a Gatsby template. This will not be required once the source plugin is out of the PoC stage.
+
+<!-- TODO: Remove PoC note once production-ready. -->
 
 ```javascript
 // In your gatsby-config.js
